@@ -35,7 +35,7 @@ salt_minion_id_conf:
 
 salt_minion_conf:
   file.managed:
-    - source: salt://salt/file/minion_overrides.conf.j2
+    - source: salt://salt-bootstraper/file/minion_overrides.conf.j2
     - name: /etc/salt/minion.d/minion_overrides.conf
     - makedirs: True
     # - template: jinja
