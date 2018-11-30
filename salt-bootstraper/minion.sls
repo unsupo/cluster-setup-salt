@@ -1,6 +1,6 @@
 
 include:
-  - salt.bootstraper
+  - salt-bootstraper.bootstraper
 
 minion_installer_run:
   cmd.run:
