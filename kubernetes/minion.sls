@@ -8,4 +8,8 @@ kubernetes_kubectl_pkgs:
       - kubelet
       - kubectl
     - require:
-      - pkgrepo: kubernetes_repository
+      - cmd: kubernetes_repository
+
+#kubernetes_kubectl_init:
+#  cmd.run:
+
