@@ -1,2 +1,2 @@
 startup_states: highstate
-master: {{pillar.get('master:ip')}}
+master: {{ grains.get('master:ip') }}
