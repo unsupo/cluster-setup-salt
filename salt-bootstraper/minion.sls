@@ -38,6 +38,7 @@ salt_minion_conf:
     - source: salt://salt-bootstraper/file/minion_overrides.conf.j2
     - name: /etc/salt/minion.d/minion_overrides.conf
     - makedirs: True
-    # - template: jinja
-    # - defaults:
+    - template: jinja
+    - defaults:
+        master_ip: {{ salt['cmd.run']('cat /root/master_ip') }}
     #     minion_id:
