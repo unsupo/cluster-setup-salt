@@ -1,13 +1,13 @@
-{{ set revision = salt['cmd.run']('grep Revision /proc/cpuinfo') }}
-{{ set hostname = salt['grains.get']('id')+'-'+ }}
+{% set revision = salt['cmd.run']('grep Revision /proc/cpuinfo') %}
+{% set hostname = salt['grains.get']('id')+'-'+ %}
 # https://www.raspberrypi.org/documentation/hardware/raspberrypi/revision-codes/README.md
-{{ if revision == '000e' }}
-  {{ set hostname += "2B" }}
-{{ elif revision == 'a020d3'  }}
-  {{ set hostname += "3Bp" }}
-{{ elif revision == '9000c1'  }}
-  {{ set hostname += "ZeroW" }}
-{{ endif }}
+{% if revision == '000e' %}
+  {% set hostname += "2B" %}
+{% elif revision == 'a020d3'  %}
+  {% set hostname += "3Bp" %}
+{% elif revision == '9000c1'  %}
+  {% set hostname += "ZeroW" %}
+{% endif %}
 
 
 setup_hostname_hosts:
