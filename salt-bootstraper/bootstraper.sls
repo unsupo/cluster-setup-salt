@@ -30,5 +30,6 @@ installer_download:
     - source: https://bootstrap.saltstack.com
     - name: /root/install_salt.sh
     - skip_verify: True
+    - creates: /root/install_salt.sh
     - require:
       - file: setup_hostname
