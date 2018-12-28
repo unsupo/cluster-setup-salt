@@ -1,4 +1,5 @@
 
+
 include:
   - salt-bootstraper.bootstraper
 
@@ -27,11 +28,12 @@ salt_minion_service:
       - pkg: minion_pkgs
     - watch:
       - file: salt_minion_id_conf
+      - file: salt_minion_conf
 
 salt_minion_id_conf:
   file.managed:
     - name: /etc/salt/minion_id
-    - contents: {{ salt['grains.get']('host') }}
+    - contents: {{ salt['cmd.run']('hostname') }}
 
 salt_minion_conf:
   file.managed:
