@@ -1,4 +1,4 @@
-{% set revision = salt['cmd.run']('grep Revision /proc/cpuinfo') %}
+{% set revision = salt['cmd.run']('grep Revision /proc/cpuinfo|awk '{split($0,a,":"); print a[2]}').strip() %}
 {% set hostname = salt['grains.get']('id')+'-' %}
 # https://www.raspberrypi.org/documentation/hardware/raspberrypi/revision-codes/README.md
 {% if revision == '000e' %}
