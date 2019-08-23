@@ -7,10 +7,15 @@
   {% set hostname = hostname + "3Bp" %}
 {% elif revision == '9000c1'  %}
   {% set hostname = hostname + "ZeroW" %}
+{% elif revision == 'a03111'  %}
+  {% set hostname = hostname + "4B-1GB" %}
+{% elif revision == 'b03111'  %}
+  {% set hostname = hostname + "4B-2GB" %}
+{% elif revision == 'c03111'  %}
+  {% set hostname = hostname + "4B-4GB" %}
 {% else %}
   {% set hostname = hostname + "UKN" %}
 {% endif %}
-
 
 setup_hostname_hosts:
   cmd.run:
